@@ -1,0 +1,7 @@
+<h2>{{ view.object.pk|yesno:"Edit Faculty,Add Faculty" }}</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% url 'faculty_list' %}">Back to list</a>

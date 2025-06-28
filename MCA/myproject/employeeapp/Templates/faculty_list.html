@@ -1,0 +1,11 @@
+<h2>Faculty List</h2>
+<a href="{% url 'faculty_add' %}">Add New</a>
+<ul>
+  {% for faculty in object_list %}
+    <li>
+      <a href="{% url  'faculty_detail' faculty.pk %}">{{ faculty.name }}</a>
+      | <a href="{% url  'faculty_edit' faculty.pk  %}">Edit</a>
+      | <a href="{% url  'faculty_delete' faculty.pk  %}">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
